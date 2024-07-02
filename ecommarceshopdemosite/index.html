@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>INNOVINVEST</title>
+    <style>
+        .loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    
+  }
+  
+  .loader {
+    height: 100vh;
+    width: 100vw;
+    width: 100%;
+    height: 100%;
+    background: rgb(180,131,98);
+    background: linear-gradient(168deg, rgb(0, 0, 0) 27%, rgb(0, 0, 0) 66%);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+  }
+  
+  .fadeOut {
+    opacity: 0;
+    transition: opacity 600ms ease;
+  }
+  
+  .hidden {
+    z-index: -1000;
+  }
+
+.circle {
+    width: 16em;
+    height: 8em;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle::before,
+.circle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+
+.circle::before {
+    width: inherit;
+    height: 0.2em;
+    background-color: hsla(0, 0%, 85%);
+}
+
+.circle::after {
+    box-sizing: border-box;
+    width: 50%;
+    height: inherit;
+    border: 0.2em solid hsla(0, 0%, 85%);
+    border-radius: 50%;
+    left: 25%;
+}
+
+.circle span {
+    position: absolute;
+    width: 5%;
+    height: 10%;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 0.2em;
+    left: -5%;
+    animation: 2s linear infinite;
+    transform-origin: 50% -3em;
+    animation-name: run, rotating;
+}
+
+.circle span:nth-child(2) {animation-delay: 0.075s;}
+.circle span:nth-child(3) {animation-delay: 0.15s;}
+
+@keyframes run {
+    0% {left: -5%;}
+    10%, 60% {left: calc((100% - 5%) / 2);}
+    70%, 100% {left: 100%;}
+}
+
+@keyframes rotating {
+    0%, 10% {transform: rotate(0deg);}
+    60%, 100% {transform: rotate(-1turn);}
+}
+    </style>
+</head>
+
+<body>
+    <!--Loader-->
+<div class="loader">
+    <div class="circle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+</div>
+     <!--Fin Loader-->
+    
+    <div class="titre" style="color:black">INNOVINVEST</div>
+    <a href="ecommarceshop/login.php" target="_blank">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Découvrez-plus
+    </a>
+    <script src="loader.js"></script>
+</body>
+</html>
